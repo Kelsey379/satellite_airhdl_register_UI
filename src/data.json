@@ -56,7 +56,7 @@
             "volatile": false
           },
           {
-            "name": "LED4",
+            "name": "LED5",
             "description": "",
             "bitWidth": 1,
             "bitOffset": 3,
@@ -107,6 +107,16 @@
           },
           {
             "name": "HV_5VA",
+            "description": "5V Analog Regulator - To High Voltage Supply",
+            "bitWidth": 1,
+            "bitOffset": 3,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "HV_5VA2",
             "description": "5V Analog Regulator - To High Voltage Supply",
             "bitWidth": 1,
             "bitOffset": 3,

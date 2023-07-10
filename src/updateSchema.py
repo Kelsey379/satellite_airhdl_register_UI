@@ -29,13 +29,14 @@ if led_group is not None:
     for led_element in led_elements:
         led_control = {
             "type": "Control",
-            "scope": f"#/properties/registerMap/properties/LEDs/{led_element['name']}",
+            "scope": f"#/properties/registerMap/properties/LEDs/properties/{led_element['name']}",
             "options": {
                 "type": "boolean",
                 "toggle": True
             }
         }
         led_group['elements'].append(led_control)
+
 
 # Find the VEn group in the uischema
 ven_group = None
@@ -52,7 +53,7 @@ if ven_group is not None:
     for ven_element in ven_elements:
         ven_control = {
             "type": "Control",
-            "scope": f"#/properties/registerMap/properties/VEn/{ven_element['name']}",
+            "scope": f"#/properties/registerMap/properties/VEn/properties/{ven_element['name']}",
             "options": {
                 "inputAttributes": {
                     "type": "number",
@@ -66,7 +67,7 @@ if ven_group is not None:
 # Find the Clock group in the uischema
 clock_group = None
 for element in uischema['elements']:
-    if 'Clock' in element['label']:
+    if element['label'] == 'Clock - 64-bit 20 ns clock':
         clock_group = element
         break
 
@@ -74,28 +75,25 @@ if clock_group is not None:
     # Clear existing Clock elements
     clock_group['elements'] = []
 
-    # Generate Clock_High elements dynamically based on the number of Clock_High elements in the data
-    for clock_high_element in clock_high_elements:
+    # Generate Clock elements dynamically based on the number of Clock elements in the data
+    for clock_high_element, clock_low_element in zip(clock_high_elements, clock_low_elements):
         clock_high_control = {
             "type": "Control",
-            "scope": f"#/properties/registerMap/properties/Clock_High/{clock_high_element['name']}",
+            "scope": f"#/properties/registerMap/properties/Clock/properties/Clock_High/properties/{clock_high_element['name']}",
+            "options": {
+                "type": "string",
+                "readonly": True
+            }
+        }
+        clock_low_control = {
+            "type": "Control",
+            "scope": f"#/properties/registerMap/properties/Clock/properties/Clock_Low/properties/{clock_low_element['name']}",
             "options": {
                 "type": "string",
                 "readonly": True
             }
         }
         clock_group['elements'].append(clock_high_control)
-
-    # Generate Clock_Low elements dynamically based on the number of Clock_Low elements in the data
-    for clock_low_element in clock_low_elements:
-        clock_low_control = {
-            "type": "Control",
-            "scope": f"#/properties/registerMap/properties/Clock_Low/{clock_low_element['name']}",
-            "options": {
-                "type": "string",
-                "readonly": True
-            }
-        }
         clock_group['elements'].append(clock_low_control)
 
 # Save the updated uischema.json file
@@ -104,8 +102,7 @@ with open('src/uischema.json', 'w') as uischema_file:
 
 print("UI schema updated successfully.")
 
-
-# Update the schema.json file
+# Generate the schema.json file
 schema = {
     "type": "object",
     "properties": {
@@ -120,45 +117,52 @@ schema = {
                     "type": "object",
                     "properties": {}
                 },
-                "Clock_High": {
+                "Clock": {
                     "type": "object",
-                    "properties": {}
-                },
-                "Clock_Low": {
-                    "type": "object",
-                    "properties": {}
+                    "properties": {
+                        "Clock_High": {
+                            "type": "object",
+                            "properties": {}
+                        },
+                        "Clock_Low": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-# Generate schema properties for LED elements
+# Generate the schema for LED elements
 for led_element in led_elements:
-    schema["properties"]["registerMap"]["properties"]["LEDs"][led_element["name"]] = {
+    schema["properties"]["registerMap"]["properties"]["LEDs"]["properties"][led_element['name']] = {
         "type": "boolean",
-        "title": led_element["name"]
+        "title": led_element['name']
     }
 
-# Generate schema properties for VEn elements
+# Generate the schema for VEn elements
 for ven_element in ven_elements:
-    schema["properties"]["registerMap"]["properties"]["VEn"][ven_element["name"]] = {
+    schema["properties"]["registerMap"]["properties"]["VEn"]["properties"][ven_element['name']] = {
         "type": "integer",
-        "title": ven_element["name"]
+        "title": ven_element['name']
     }
 
-# Generate schema properties for Clock_High elements
+# Generate the schema for Clock_High elements
 for clock_high_element in clock_high_elements:
-    schema["properties"]["registerMap"]["properties"]["Clock_High"][clock_high_element["name"]] = {
+    schema["properties"]["registerMap"]["properties"]["Clock"]["properties"]["Clock_High"]["properties"][clock_high_element['name']] = {
         "type": "string",
-        "title": clock_high_element["name"]
+        "title": clock_high_element['name'],
+        "readOnly": True
     }
 
-# Generate schema properties for Clock_Low elements
+# Generate the schema for Clock_Low elements
 for clock_low_element in clock_low_elements:
-    schema["properties"]["registerMap"]["properties"]["Clock_Low"][clock_low_element["name"]] = {
+    schema["properties"]["registerMap"]["properties"]["Clock"]["properties"]["Clock_Low"]["properties"][clock_low_element['name']] = {
         "type": "string",
-        "title": clock_low_element["name"]
+        "title": clock_low_element['name'],
+        "readOnly": True
     }
 
 # Save the updated schema.json file

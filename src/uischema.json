@@ -3,114 +3,142 @@
   "elements": [
     {
       "type": "Group",
-      "label": "Register Map",
+      "label": "VEn - Enable the voltages",
       "elements": [
         {
-          "type": "VerticalLayout",
-          "label": "VEn - Enable the voltages",
-          "elements": [
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/VEn/ADC_1V8A",
-              "options": {
-                "inputAttributes": {
-                  "type": "number",
-                  "step": 1,
-                  "pattern": "\\d+"
-                }
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/VEn/FEM_5VA",
-              "options": {
-                "inputAttributes": {
-                  "type": "number",
-                  "step": 1,
-                  "pattern": "\\d+"
-                }
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/VEn/FEM_N5VA",
-              "options": {
-                "inputAttributes": {
-                  "type": "number",
-                  "step": 1,
-                  "pattern": "\\d+"
-                }
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/VEn/HV_5VA",
-              "options": {
-                "inputAttributes": {
-                  "type": "number",
-                  "step": 1,
-                  "pattern": "\\d+"
-                }
-              }
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/ADC_1V8A",
+          "options": {
+            "inputAttributes": {
+              "type": "number",
+              "step": 1,
+              "pattern": "\\d+"
             }
-          ]
+          }
         },
         {
-          "type": "VerticalLayout",
-          "label": "LEDs - Turn the LEDs on/off",
-          "elements": [
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/LEDs/LED1",
-              "options": {
-                "type": "boolean",
-                "toggle": true
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/LEDs/LED2",
-              "options": {
-                "type": "boolean",
-                "toggle": true
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/LEDs/LED3",
-              "options": {
-                "type": "boolean",
-                "toggle": true
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/LEDs/LED4",
-              "options": {
-                "type": "boolean",
-                "toggle": true
-              }
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_5VA",
+          "options": {
+            "inputAttributes": {
+              "type": "number",
+              "step": 1,
+              "pattern": "\\d+"
             }
-          ]
+          }
         },
         {
-          "type": "Group",
-          "label": "Clock - View the upper and lower 32 bits of a 20 ns clock",
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_N5VA",
+          "options": {
+            "inputAttributes": {
+              "type": "number",
+              "step": 1,
+              "pattern": "\\d+"
+            }
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA",
+          "options": {
+            "inputAttributes": {
+              "type": "number",
+              "step": 1,
+              "pattern": "\\d+"
+            }
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA2",
+          "options": {
+            "inputAttributes": {
+              "type": "number",
+              "step": 1,
+              "pattern": "\\d+"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "LEDs - Turn the LEDs on/off",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED1",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED2",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED3",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED4",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED5",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Clock - View the upper and lower 32 bits of a 20 ns clock",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
           "elements": [
             {
               "type": "Control",
-              "scope": "#/properties/registerMap/properties/Clock_High/value",
+              "scope": "#/properties/registerMap/properties/Clock/properties/Clock_High",
               "options": {
-                "type": "string",
-                "readonly": true
+                "inputAttributes": {
+                  "type": "text"
+                },
+                "rule": {
+                  "readOnly": true,
+                  "effect": "disabled"
+                }
               }
             },
             {
               "type": "Control",
-              "scope": "#/properties/registerMap/properties/Clock_Low/value",
+              "scope": "#/properties/registerMap/properties/Clock/properties/Clock_Low",
               "options": {
-                "type": "string",
-                "readonly": true
+                "inputAttributes": {
+                  "type": "text"
+                },
+                "rule": {
+                  "readOnly": true,
+                  "effect": "disabled"
+                }
               }
             }
           ]
