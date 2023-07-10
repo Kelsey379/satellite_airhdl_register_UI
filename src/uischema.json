@@ -1,0 +1,121 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Group",
+      "label": "Register Map",
+      "elements": [
+        {
+          "type": "VerticalLayout",
+          "label": "VEn - Enable the voltages",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/VEn/ADC_1V8A",
+              "options": {
+                "inputAttributes": {
+                  "type": "number",
+                  "step": 1,
+                  "pattern": "\\d+"
+                }
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/VEn/FEM_5VA",
+              "options": {
+                "inputAttributes": {
+                  "type": "number",
+                  "step": 1,
+                  "pattern": "\\d+"
+                }
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/VEn/FEM_N5VA",
+              "options": {
+                "inputAttributes": {
+                  "type": "number",
+                  "step": 1,
+                  "pattern": "\\d+"
+                }
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/VEn/HV_5VA",
+              "options": {
+                "inputAttributes": {
+                  "type": "number",
+                  "step": 1,
+                  "pattern": "\\d+"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "VerticalLayout",
+          "label": "LEDs - Turn the LEDs on/off",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/LEDs/LED1",
+              "options": {
+                "type": "boolean",
+                "toggle": true
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/LEDs/LED2",
+              "options": {
+                "type": "boolean",
+                "toggle": true
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/LEDs/LED3",
+              "options": {
+                "type": "boolean",
+                "toggle": true
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/LEDs/LED4",
+              "options": {
+                "type": "boolean",
+                "toggle": true
+              }
+            }
+          ]
+        },
+        {
+          "type": "Group",
+          "label": "Clock - View the upper and lower 32 bits of a 20 ns clock",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/Clock_High/value",
+              "options": {
+                "type": "string",
+                "readonly": true
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/registerMap/properties/Clock_Low/value",
+              "options": {
+                "type": "string",
+                "readonly": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "jsonVersion": 2,
+  "registerMap": {
+    "name": "DAMRegisterFilesPRESET",
+    "description": "Register files for CCP-PRE-DAM-REVA",
+    "width": 32,
+    "baseAddress": 1241513984,
+    "addrWidthBits": 32,
+    "registers": [
+      {
+        "type": "Register",
+        "name": "LEDs",
+        "description": "Turn the LEDs on/off",
+        "access": "READ_WRITE",
+        "addressOffset": 0,
+        "size": 32,
+        "fields": [
+          {
+            "name": "LED1",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "LED2",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 1,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "LED3",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 2,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "LED4",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 3,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "LED4",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 3,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "VEn",
+        "description": "Enable the voltages",
+        "access": "READ_WRITE",
+        "addressOffset": 4,
+        "size": 32,
+        "fields": [
+          {
+            "name": "ADC_1V8A",
+            "description": "1V8 Analog Regulator - To Onboard ADC",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "FEM_5VA",
+            "description": "5V Analog Regulator - To Front End Module (FEM)",
+            "bitWidth": 1,
+            "bitOffset": 1,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "FEM_N5VA",
+            "description": "5V Negative Analog Regulator - To Front End Module (FEM)",
+            "bitWidth": 1,
+            "bitOffset": 2,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "HV_5VA",
+            "description": "5V Analog Regulator - To High Voltage Supply",
+            "bitWidth": 1,
+            "bitOffset": 3,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "Clock_Low",
+        "description": "Lower 32 bits of a 64-bit 20 ns clock",
+        "access": "READ_ONLY",
+        "addressOffset": 8,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "Lower 32 bits of a 64-bit 20 ns clock",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "Clock_High",
+        "description": "Upper 32 bits of a 64-bit 20 ns clock",
+        "access": "READ_ONLY",
+        "addressOffset": 12,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "Upper 32 bits of a 64-bit 20 ns clock",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      }
+    ],
+    "revision": 31,
+    "generateRecordPorts": false,
+    "generatePackedStructs": false
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "registerMap": {
+      "type": "object",
+      "properties": {
+        "VEn": {
+          "type": "object",
+          "properties": {},
+          "ADC_1V8A": {
+            "type": "integer",
+            "title": "ADC_1V8A"
+          },
+          "FEM_5VA": {
+            "type": "integer",
+            "title": "FEM_5VA"
+          },
+          "FEM_N5VA": {
+            "type": "integer",
+            "title": "FEM_N5VA"
+          },
+          "HV_5VA": {
+            "type": "integer",
+            "title": "HV_5VA"
+          }
+        },
+        "LEDs": {
+          "type": "object",
+          "properties": {},
+          "LED1": {
+            "type": "boolean",
+            "title": "LED1"
+          },
+          "LED2": {
+            "type": "boolean",
+            "title": "LED2"
+          },
+          "LED3": {
+            "type": "boolean",
+            "title": "LED3"
+          },
+          "LED4": {
+            "type": "boolean",
+            "title": "LED4"
+          }
+        },
+        "Clock_High": {
+          "type": "object",
+          "properties": {},
+          "value": {
+            "type": "string",
+            "title": "value"
+          }
+        },
+        "Clock_Low": {
+          "type": "object",
+          "properties": {},
+          "value": {
+            "type": "string",
+            "title": "value"
+          }
+        }
+      }
+    }
+  }
+}

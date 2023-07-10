@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { JsonForms } from '@jsonforms/react';
+import { materialRenderers, materialCells } from '@jsonforms/material-renderers';
+import importedSchema from './schema.json';
+import importedUischema from './uischema.json'; 
+import initialData from './data.json'; 
+
 import './App.css';
 
 function App() {
+  const [data, setData] = useState(initialData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>PRESET AirHDL Registers</h1>
+      <hr/>
+      <JsonForms
+        schema={importedSchema}
+        uischema={importedUischema}
+        data={data}
+        renderers={materialRenderers}
+        cells={materialCells}
+        onChange={({ data, errors }) => setData(data)}
+      />
     </div>
   );
 }
