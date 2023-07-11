@@ -62,8 +62,11 @@
               "properties": {
                 "value": {
                   "type": "string",
-                  "title": "value",
-                  "readOnly": true
+                  "title": "value"
+                },
+                "value2": {
+                  "type": "string",
+                  "title": "value2"
                 }
               }
             },
@@ -72,8 +75,11 @@
               "properties": {
                 "value": {
                   "type": "string",
-                  "title": "value",
-                  "readOnly": true
+                  "title": "value"
+                },
+                "value2": {
+                  "type": "string",
+                  "title": "value2"
                 }
               }
             }

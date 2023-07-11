@@ -144,6 +144,16 @@
             "selfClear": false,
             "enumValues": [],
             "volatile": false
+          },
+          {
+            "name": "value2",
+            "description": "Lower 32 bits of a 64-bit 20 ns clock",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
           }
         ]
       },
@@ -157,6 +167,16 @@
         "fields": [
           {
             "name": "value",
+            "description": "Upper 32 bits of a 64-bit 20 ns clock",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          },
+          {
+            "name": "value2",
             "description": "Upper 32 bits of a 64-bit 20 ns clock",
             "bitWidth": 32,
             "bitOffset": 0,
