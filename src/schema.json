@@ -8,23 +8,23 @@
           "type": "object",
           "properties": {
             "ADC_1V8A": {
-              "type": "integer",
+              "type": "boolean",
               "title": "ADC_1V8A"
             },
             "FEM_5VA": {
-              "type": "integer",
+              "type": "boolean",
               "title": "FEM_5VA"
             },
             "FEM_N5VA": {
-              "type": "integer",
+              "type": "boolean",
               "title": "FEM_N5VA"
             },
             "HV_5VA": {
-              "type": "integer",
+              "type": "boolean",
               "title": "HV_5VA"
             },
             "HV_5VA2": {
-              "type": "integer",
+              "type": "boolean",
               "title": "HV_5VA2"
             }
           }
@@ -62,11 +62,13 @@
               "properties": {
                 "value": {
                   "type": "string",
-                  "title": "value"
+                  "title": "value",
+                  "readOnly": true
                 },
                 "value2": {
                   "type": "string",
-                  "title": "value2"
+                  "title": "value2",
+                  "readOnly": true
                 }
               }
             },
@@ -75,11 +77,13 @@
               "properties": {
                 "value": {
                   "type": "string",
-                  "title": "value"
+                  "title": "value",
+                  "readOnly": true
                 },
                 "value2": {
                   "type": "string",
-                  "title": "value2"
+                  "title": "value2",
+                  "readOnly": true
                 }
               }
             }

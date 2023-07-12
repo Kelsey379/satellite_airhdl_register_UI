@@ -9,55 +9,40 @@
           "type": "Control",
           "scope": "#/properties/registerMap/properties/VEn/properties/ADC_1V8A",
           "options": {
-            "inputAttributes": {
-              "type": "number",
-              "step": 1,
-              "pattern": "\\d+"
-            }
+            "type": "boolean",
+            "toggle": true
           }
         },
         {
           "type": "Control",
           "scope": "#/properties/registerMap/properties/VEn/properties/FEM_5VA",
           "options": {
-            "inputAttributes": {
-              "type": "number",
-              "step": 1,
-              "pattern": "\\d+"
-            }
+            "type": "boolean",
+            "toggle": true
           }
         },
         {
           "type": "Control",
           "scope": "#/properties/registerMap/properties/VEn/properties/FEM_N5VA",
           "options": {
-            "inputAttributes": {
-              "type": "number",
-              "step": 1,
-              "pattern": "\\d+"
-            }
+            "type": "boolean",
+            "toggle": true
           }
         },
         {
           "type": "Control",
           "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA",
           "options": {
-            "inputAttributes": {
-              "type": "number",
-              "step": 1,
-              "pattern": "\\d+"
-            }
+            "type": "boolean",
+            "toggle": true
           }
         },
         {
           "type": "Control",
           "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA2",
           "options": {
-            "inputAttributes": {
-              "type": "number",
-              "step": 1,
-              "pattern": "\\d+"
-            }
+            "type": "boolean",
+            "toggle": true
           }
         }
       ]
