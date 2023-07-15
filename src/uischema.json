@@ -3,52 +3,6 @@
   "elements": [
     {
       "type": "Group",
-      "label": "VEn - Enable the voltages",
-      "elements": [
-        {
-          "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/ADC_1V8A",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_5VA",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_N5VA",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA2",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
       "label": "LEDs - Turn the LEDs on/off",
       "elements": [
         {
@@ -85,7 +39,7 @@
         },
         {
           "type": "Control",
-          "scope": "#/properties/registerMap/properties/LEDs/properties/LED5",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/Sample_LED",
           "options": {
             "type": "boolean",
             "toggle": true
@@ -95,38 +49,99 @@
     },
     {
       "type": "Group",
-      "label": "Clock - View the upper and lower 32 bits of a 20 ns clock",
+      "label": "VEn - Enable the voltages",
       "elements": [
         {
-          "type": "HorizontalLayout",
-          "elements": [
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/Clock/properties/Clock_High",
-              "options": {
-                "inputAttributes": {
-                  "type": "text"
-                },
-                "rule": {
-                  "readOnly": true,
-                  "effect": "disabled"
-                }
-              }
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/registerMap/properties/Clock/properties/Clock_Low",
-              "options": {
-                "inputAttributes": {
-                  "type": "text"
-                },
-                "rule": {
-                  "readOnly": true,
-                  "effect": "disabled"
-                }
-              }
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/ADC_1V8A",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_5VA",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_N5VA",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/VEn/properties/Additional_Sample_Voltage",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Clock_Low - Lower 32 bits of a 64-bit 20 ns clock",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Clock_Low/properties/value",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
             }
-          ]
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Clock_Low/properties/value2",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Clock_High - Upper 32 bits of a 64-bit 20 ns clock",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Clock_High/properties/value",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Clock_High/properties/value2",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
+          }
         }
       ]
     }

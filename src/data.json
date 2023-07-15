@@ -56,7 +56,7 @@
             "volatile": false
           },
           {
-            "name": "LED5",
+            "name": "Sample_LED",
             "description": "",
             "bitWidth": 1,
             "bitOffset": 3,
@@ -116,7 +116,7 @@
             "volatile": false
           },
           {
-            "name": "HV_5VA2",
+            "name": "Additional_Sample_Voltage",
             "description": "5V Analog Regulator - To High Voltage Supply",
             "bitWidth": 1,
             "bitOffset": 3,

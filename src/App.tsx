@@ -22,7 +22,11 @@ function App() {
         cells={materialCells}
         onChange={({ data, errors }) => setData(data)}
       />
+      <div className="submit-button">
+        <button type="submit">Submit</button>
+      </div>
     </div>
+    
   );
 }
 
