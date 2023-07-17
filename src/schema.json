@@ -47,10 +47,6 @@
             "HV_5VA": {
               "type": "boolean",
               "title": "HV_5VA"
-            },
-            "Additional_Sample_Voltage": {
-              "type": "boolean",
-              "title": "Additional_Sample_Voltage"
             }
           }
         },
@@ -81,6 +77,15 @@
               "type": "integer",
               "title": "value2",
               "readOnly": true
+            }
+          }
+        },
+        "Sample Register": {
+          "type": "object",
+          "properties": {
+            "sample_value": {
+              "type": "integer",
+              "title": "sample_value"
             }
           }
         }

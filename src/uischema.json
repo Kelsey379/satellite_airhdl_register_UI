@@ -82,14 +82,6 @@
             "type": "boolean",
             "toggle": true
           }
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/Additional_Sample_Voltage",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
         }
       ]
     },
@@ -142,6 +134,16 @@
               "effect": "disabled"
             }
           }
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Sample Register - test register for values",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Sample Register/properties/sample_value"
         }
       ]
     }

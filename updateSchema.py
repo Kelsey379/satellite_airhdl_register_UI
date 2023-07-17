@@ -1,5 +1,27 @@
 import json
 
+#save values to local storage?
+
+# def save_to_local_storage(data):
+#     with open('src/uischema.json', 'w') as f:
+#         json.dump(data['ui_schema'], f, indent=2)
+
+#     with open('src/schema.json', 'w') as f:
+#         json.dump(data['data_schema'], f, indent=2)
+
+# def generate_json_files(data):
+#     ui_schema = generate_ui_schema(data)
+#     data_schema = generate_data_schema(data)
+
+#     data_to_save = {
+#         "ui_schema": ui_schema,
+#         "data_schema": data_schema
+#     }
+
+#     save_to_local_storage(data_to_save)
+
+# end of test
+
 def generate_ui_schema(data):
     registers = data['registerMap']['registers']
 
