@@ -114,6 +114,16 @@
             "selfClear": false,
             "enumValues": [],
             "volatile": false
+          },
+          {
+            "name": "Additional_Sample_Voltage1",
+            "description": "5V Analog Regulator - To High Voltage Supply",
+            "bitWidth": 1,
+            "bitOffset": 3,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
           }
         ]
       },
@@ -126,7 +136,7 @@
         "size": 32,
         "fields": [
           {
-            "name": "value",
+            "name": "value1",
             "description": "Lower 32 bits of a 64-bit 20 ns clock",
             "bitWidth": 32,
             "bitOffset": 0,
@@ -156,7 +166,7 @@
         "size": 32,
         "fields": [
           {
-            "name": "value",
+            "name": "value3",
             "description": "Upper 32 bits of a 64-bit 20 ns clock",
             "bitWidth": 32,
             "bitOffset": 0,
@@ -166,7 +176,7 @@
             "volatile": false
           },
           {
-            "name": "value2",
+            "name": "value4",
             "description": "Upper 32 bits of a 64-bit 20 ns clock",
             "bitWidth": 32,
             "bitOffset": 0,
@@ -180,7 +190,7 @@
 
       {
         "type": "Register",
-        "name": "Sample Register",
+        "name": "sample",
         "description": "test register for values",
         "access": "READ_WRITE",
         "addressOffset": 4,

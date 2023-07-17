@@ -1,27 +1,5 @@
 import json
 
-#save values to local storage?
-
-# def save_to_local_storage(data):
-#     with open('src/uischema.json', 'w') as f:
-#         json.dump(data['ui_schema'], f, indent=2)
-
-#     with open('src/schema.json', 'w') as f:
-#         json.dump(data['data_schema'], f, indent=2)
-
-# def generate_json_files(data):
-#     ui_schema = generate_ui_schema(data)
-#     data_schema = generate_data_schema(data)
-
-#     data_to_save = {
-#         "ui_schema": ui_schema,
-#         "data_schema": data_schema
-#     }
-
-#     save_to_local_storage(data_to_save)
-
-# end of test
-
 def generate_ui_schema(data):
     registers = data['registerMap']['registers']
 
@@ -29,6 +7,9 @@ def generate_ui_schema(data):
         "type": "VerticalLayout",
         "elements": []
     }
+
+    clock_low_elements = []  # Store clock_low elements here
+    clock_high_elements = []  # Store clock_high elements here
 
     for register in registers:
         group = {
@@ -58,7 +39,40 @@ def generate_ui_schema(data):
 
             group['elements'].append(element)
 
-        ui_schema['elements'].append(group)
+        # Check if the group should be part of the "clock" section
+        if 'clock' in register['name'].lower():
+            if 'clock_low' in register['name'].lower():
+                clock_low_elements.extend(group['elements'])
+            elif 'clock_high' in register['name'].lower():
+                clock_high_elements.extend(group['elements'])
+        else:
+            ui_schema['elements'].append(group)
+
+    # Create a group for clock_low and clock_high elements
+    clock_group = {
+        "type": "Group",
+        "label": "Clock",
+        "elements": [
+            {
+                "type": "HorizontalLayout",
+                "elements": [
+                    {
+                        "type": "Group",
+                        "label": "Clock Low",
+                        "elements": clock_low_elements
+                    },
+                    {
+                        "type": "Group",
+                        "label": "Clock High",
+                        "elements": clock_high_elements
+                    }
+                ]
+            }
+        ]
+    }
+
+    # Add the clock_group to the UI schema
+    ui_schema['elements'].append(clock_group)
 
     return ui_schema
 
@@ -115,8 +129,9 @@ with open('src/data.json') as f:
 
 # Make clock fields read-only
 for register in data['registerMap']['registers']:
-    if register['name'] == 'Clock_Low' or register['name'] == 'Clock_High':
+    if 'clock' in register['name'].lower():
         for field in register['fields']:
             field['readOnly'] = True
 
+# Generate the updated JSON files
 generate_json_files(data)

@@ -47,15 +47,19 @@
             "HV_5VA": {
               "type": "boolean",
               "title": "HV_5VA"
+            },
+            "Additional_Sample_Voltage1": {
+              "type": "boolean",
+              "title": "Additional_Sample_Voltage1"
             }
           }
         },
         "Clock_Low": {
           "type": "object",
           "properties": {
-            "value": {
+            "value1": {
               "type": "integer",
-              "title": "value",
+              "title": "value1",
               "readOnly": true
             },
             "value2": {
@@ -68,19 +72,19 @@
         "Clock_High": {
           "type": "object",
           "properties": {
-            "value": {
+            "value3": {
               "type": "integer",
-              "title": "value",
+              "title": "value3",
               "readOnly": true
             },
-            "value2": {
+            "value4": {
               "type": "integer",
-              "title": "value2",
+              "title": "value4",
               "readOnly": true
             }
           }
         },
-        "Sample Register": {
+        "sample": {
           "type": "object",
           "properties": {
             "sample_value": {
