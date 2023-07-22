@@ -38,41 +38,7 @@ def generate_ui_schema(data):
                 }
 
             group['elements'].append(element)
-
-        # Check if the group should be part of the "clock" section
-        if 'clock' in register['name'].lower():
-            if 'clock_low' in register['name'].lower():
-                clock_low_elements.extend(group['elements'])
-            elif 'clock_high' in register['name'].lower():
-                clock_high_elements.extend(group['elements'])
-        else:
-            ui_schema['elements'].append(group)
-
-    # Create a group for clock_low and clock_high elements
-    clock_group = {
-        "type": "Group",
-        "label": "Clock",
-        "elements": [
-            {
-                "type": "HorizontalLayout",
-                "elements": [
-                    {
-                        "type": "Group",
-                        "label": "Clock Low",
-                        "elements": clock_low_elements
-                    },
-                    {
-                        "type": "Group",
-                        "label": "Clock High",
-                        "elements": clock_high_elements
-                    }
-                ]
-            }
-        ]
-    }
-
-    # Add the clock_group to the UI schema
-    ui_schema['elements'].append(clock_group)
+        ui_schema['elements'].append(group)
 
     return ui_schema
 
@@ -127,9 +93,9 @@ def generate_json_files(data):
 with open('src/data.json') as f:
     data = json.load(f)
 
-# Make clock fields read-only
+# make certain fields read-only
 for register in data['registerMap']['registers']:
-    if 'clock' in register['name'].lower():
+    if 'READ_ONLY' in register['access']:
         for field in register['fields']:
             field['readOnly'] = True
 

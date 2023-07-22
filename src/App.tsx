@@ -19,7 +19,7 @@ function App() {
   // took out 'data' state and 'onChange' handler, not needed
   return (
     <div className="App">
-      <h1>PRESET AirHDL Registers</h1>
+      <h1>AirHDL Registers</h1>
       <hr />
       <JsonForms
         schema={importedSchema}

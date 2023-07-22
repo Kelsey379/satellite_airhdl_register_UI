@@ -1,0 +1,724 @@
+{
+  "jsonVersion": 2,
+  "registerMap": {
+    "name": "PRE_DAM_REVA_PER_CH_REGISTERS",
+    "description": "This map is for the PRESET DAM REVA, and provides registers and memory access to the BRAMs all science related parameters. These grow per ADC channel.",
+    "width": 32,
+    "baseAddress": 1258291200,
+    "addrWidthBits": 32,
+    "registers": [
+      {
+        "type": "Register",
+        "name": "downsample_factor_index",
+        "description": "A power of 2 index for the front-end decimator",
+        "access": "READ_WRITE",
+        "addressOffset": 0,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 5,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "slow_shaper_rise_time",
+        "description": "Rise time for the trapezoidal filter",
+        "access": "READ_WRITE",
+        "addressOffset": 4,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 9,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "slow_shaper_flat_top",
+        "description": "Flat top for the trapezoidal filter",
+        "access": "READ_WRITE",
+        "addressOffset": 8,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 8,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "slow_shaper_multiply",
+        "description": "A conversion gain on the trapezoidal filter, allows you to use more of the dynamic range for short filter lengths",
+        "access": "READ_WRITE",
+        "addressOffset": 12,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 12,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "fast_shaper_rise_time",
+        "description": "Rise time for the triangular filter",
+        "access": "READ_WRITE",
+        "addressOffset": 16,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 9,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "fast_shaper_multiply",
+        "description": "A conversion gain on the trapezoidal filter, allows you to use more of the dynamic range for short filter lengths",
+        "access": "READ_WRITE",
+        "addressOffset": 20,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 12,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "moving_average_filter_index",
+        "description": "A power of 2 index for the moving average filter",
+        "access": "READ_WRITE",
+        "addressOffset": 24,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 8,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "energy_noise_threshold",
+        "description": "The ADC value to consider a trace a real event. This is used to determine the energy",
+        "access": "READ_WRITE",
+        "addressOffset": 28,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 16,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "timing_noise_threshold",
+        "description": "The ADC value to latch the clock for timing purposes. This can be lower than the energy threshold for more accurate timing. Uses the triangular filtered trace",
+        "access": "READ_WRITE",
+        "addressOffset": 32,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 16,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "select_time_to_use",
+        "description": "Allows the user to select the slow shaper time instead of the fast shaper time if required.\n0 \u003d fast time\n1 \u003d slow time",
+        "access": "READ_WRITE",
+        "addressOffset": 36,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trigger_mux",
+        "description": "Allows the user to select a trace for triggering (i.e. the energy channel).\n00 \u003d raw ADC data\n01 \u003d trapezoidal filter\n10 \u003d triangular filter\n11 \u003d moving average filter",
+        "access": "READ_WRITE",
+        "addressOffset": 40,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 2,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trigger_subtract",
+        "description": "The time difference between the trigger and when the baseline should be sampled for determining the energy. Positive numbers only",
+        "access": "READ_WRITE",
+        "addressOffset": 44,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 8,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "energy_pickoff",
+        "description": "The number of samples to wait until choosing the energy value. Should be slightly longer than the rise time",
+        "access": "READ_WRITE",
+        "addressOffset": 48,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 11,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "pileup_enable",
+        "description": "An enable register for the pile-up module",
+        "access": "READ_WRITE",
+        "addressOffset": 52,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "pile_up_window",
+        "description": "The number of samples to look for pile-up after a trigger",
+        "access": "READ_WRITE",
+        "addressOffset": 56,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 8,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "output_event_scaler",
+        "description": "A scaler counting the number of events processed. Used for dead-time calculations",
+        "access": "READ_ONLY",
+        "addressOffset": 60,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "input_event_scaler",
+        "description": "A scaler counting the number of triggers that have been recorded. Used for dead-time calculations",
+        "access": "READ_ONLY",
+        "addressOffset": 64,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "input_scaler_lockout",
+        "description": "An intentional fixed deadtime applied to the input scaler, allowing for a pure non-paralyzable model to be used. In order for this to be valid, this time must be longer than the full trapezoidal filter length",
+        "access": "READ_WRITE",
+        "addressOffset": 68,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 16,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_viewer_control",
+        "description": "A mux to determine which trace is actually stored.\n000 \u003d raw ADC data\n001 \u003d downsampled data\n010 \u003d triangle filter\n011 \u003d trapezoidal filter\n100 \u003d moving average filter\nall others give raw ADC data",
+        "access": "READ_WRITE",
+        "addressOffset": 256,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 3,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_pretrigger_delay",
+        "description": "The amount of samples before and after the trace \"trigger\" to keep for display purposes only",
+        "access": "READ_WRITE",
+        "addressOffset": 260,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 8,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_read_length",
+        "description": "This is the length of the trace to be read in the buffer",
+        "access": "READ_ONLY",
+        "addressOffset": 264,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_read_address",
+        "description": "The address offset to start reading from the buffer",
+        "access": "READ_ONLY",
+        "addressOffset": 268,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 11,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_ready",
+        "description": "Register being high means that a trace is ready for processing. This will stay high until the trace has been fully read and microblaze has de-asserted its flag",
+        "access": "READ_ONLY",
+        "addressOffset": 272,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_read_in_progress",
+        "description": "The microblaze flag that the trace is being read, must be lowered to complete the read process",
+        "access": "READ_WRITE",
+        "addressOffset": 276,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_energy",
+        "description": "The energy of the trace stored in the buffer",
+        "access": "READ_ONLY",
+        "addressOffset": 280,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_time",
+        "description": "The time of the trace stored in the buffer",
+        "access": "READ_ONLY",
+        "addressOffset": 284,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "trace_flags",
+        "description": "The flags for the trace stored in the buffer",
+        "access": "READ_ONLY",
+        "addressOffset": 288,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "list_number_of_entries",
+        "description": "The number of values in the list to be read",
+        "access": "READ_ONLY",
+        "addressOffset": 512,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 4,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "list_read_address",
+        "description": "The address to start reading the list memory from",
+        "access": "READ_ONLY",
+        "addressOffset": 516,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 4,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "list_not_empty",
+        "description": "A bit to tell the microblaze to read this list",
+        "access": "READ_ONLY",
+        "addressOffset": 520,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Register",
+        "name": "list_read_in_progress",
+        "description": "A signal to let the hdl know the microblaze is reading the list.\nV1 limitations\nYou MUST read the number of entries and read address BEFORE raising this flag. Any entries you don\u0027t read will be lost, so try to read the whole list",
+        "access": "READ_WRITE",
+        "addressOffset": 524,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 1,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Memory",
+        "depth": 2048,
+        "readLatency": 2,
+        "name": "trace_buffer",
+        "description": "The actual trace buffer",
+        "access": "READ_ONLY",
+        "addressOffset": 768,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Memory",
+        "depth": 16,
+        "readLatency": 2,
+        "name": "list_energy_buffer",
+        "description": "List buffer containing the energies",
+        "access": "READ_ONLY",
+        "addressOffset": 12288,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Memory",
+        "depth": 16,
+        "readLatency": 2,
+        "name": "list_time",
+        "description": "The list times",
+        "access": "READ_ONLY",
+        "addressOffset": 12544,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      },
+      {
+        "type": "Memory",
+        "depth": 16,
+        "readLatency": 2,
+        "name": "list_flags",
+        "description": "The list flags",
+        "access": "READ_ONLY",
+        "addressOffset": 12800,
+        "size": 32,
+        "fields": [
+          {
+            "name": "value",
+            "description": "",
+            "bitWidth": 32,
+            "bitOffset": 0,
+            "reset": 0,
+            "selfClear": false,
+            "enumValues": [],
+            "volatile": false
+          }
+        ]
+      }
+    ],
+    "revision": 91,
+    "generateRecordPorts": true,
+    "generatePackedStructs": false,
+    "disableTimestamps": false
+  }
+}

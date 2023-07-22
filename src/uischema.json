@@ -82,87 +82,58 @@
             "type": "boolean",
             "toggle": true
           }
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Clock_Low - Lower 32 bits of a 64-bit 20 ns clock",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Clock_Low/properties/value1",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
+          }
         },
         {
           "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/Additional_Sample_Voltage1",
+          "scope": "#/properties/registerMap/properties/Clock_Low/properties/value2",
           "options": {
-            "type": "boolean",
-            "toggle": true
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
           }
         }
       ]
     },
     {
       "type": "Group",
-      "label": "sample - test register for values",
+      "label": "Clock_High - Upper 32 bits of a 64-bit 20 ns clock",
       "elements": [
         {
           "type": "Control",
-          "scope": "#/properties/registerMap/properties/sample/properties/sample_value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "Clock",
-      "elements": [
-        {
-          "type": "HorizontalLayout",
-          "elements": [
-            {
-              "type": "Group",
-              "label": "Clock Low",
-              "elements": [
-                {
-                  "type": "Control",
-                  "scope": "#/properties/registerMap/properties/Clock_Low/properties/value1",
-                  "options": {
-                    "rule": {
-                      "readOnly": true,
-                      "effect": "disabled"
-                    }
-                  }
-                },
-                {
-                  "type": "Control",
-                  "scope": "#/properties/registerMap/properties/Clock_Low/properties/value2",
-                  "options": {
-                    "rule": {
-                      "readOnly": true,
-                      "effect": "disabled"
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "type": "Group",
-              "label": "Clock High",
-              "elements": [
-                {
-                  "type": "Control",
-                  "scope": "#/properties/registerMap/properties/Clock_High/properties/value3",
-                  "options": {
-                    "rule": {
-                      "readOnly": true,
-                      "effect": "disabled"
-                    }
-                  }
-                },
-                {
-                  "type": "Control",
-                  "scope": "#/properties/registerMap/properties/Clock_High/properties/value4",
-                  "options": {
-                    "rule": {
-                      "readOnly": true,
-                      "effect": "disabled"
-                    }
-                  }
-                }
-              ]
+          "scope": "#/properties/registerMap/properties/Clock_High/properties/value3",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
             }
-          ]
+          }
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/registerMap/properties/Clock_High/properties/value4",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
+          }
         }
       ]
     }
