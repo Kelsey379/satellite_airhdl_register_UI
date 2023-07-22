@@ -8,9 +8,6 @@ def generate_ui_schema(data):
         "elements": []
     }
 
-    clock_low_elements = []  # Store clock_low elements here
-    clock_high_elements = []  # Store clock_high elements here
-
     for register in registers:
         group = {
             "type": "Group",

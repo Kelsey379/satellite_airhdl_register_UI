@@ -106,7 +106,7 @@
             "volatile": false
           },
           {
-            "name": "HV_5VA",
+            "name": "HV_5VA2",
             "description": "5V Analog Regulator - To High Voltage Supply",
             "bitWidth": 1,
             "bitOffset": 3,

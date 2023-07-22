@@ -77,7 +77,7 @@
         },
         {
           "type": "Control",
-          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA",
+          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA2",
           "options": {
             "type": "boolean",
             "toggle": true

@@ -44,9 +44,9 @@
               "type": "boolean",
               "title": "FEM_N5VA"
             },
-            "HV_5VA": {
+            "HV_5VA2": {
               "type": "boolean",
-              "title": "HV_5VA"
+              "title": "HV_5VA2"
             }
           }
         },
