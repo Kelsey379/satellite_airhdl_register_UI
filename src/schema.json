@@ -4,79 +4,438 @@
     "registerMap": {
       "type": "object",
       "properties": {
-        "LEDs": {
+        "downsample_factor_index": {
           "type": "object",
           "properties": {
-            "LED1": {
-              "type": "boolean",
-              "title": "LED1"
-            },
-            "LED2": {
-              "type": "boolean",
-              "title": "LED2"
-            },
-            "LED3": {
-              "type": "boolean",
-              "title": "LED3"
-            },
-            "LED4": {
-              "type": "boolean",
-              "title": "LED4"
-            },
-            "Sample_LED": {
-              "type": "boolean",
-              "title": "Sample_LED"
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 31,
+              "minimum": 0
             }
           }
         },
-        "VEn": {
+        "slow_shaper_rise_time": {
           "type": "object",
           "properties": {
-            "ADC_1V8A": {
-              "type": "boolean",
-              "title": "ADC_1V8A"
-            },
-            "FEM_5VA": {
-              "type": "boolean",
-              "title": "FEM_5VA"
-            },
-            "FEM_N5VA": {
-              "type": "boolean",
-              "title": "FEM_N5VA"
-            },
-            "HV_5VA2": {
-              "type": "boolean",
-              "title": "HV_5VA2"
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 511,
+              "minimum": 0
             }
           }
         },
-        "Clock_Low": {
+        "slow_shaper_flat_top": {
           "type": "object",
           "properties": {
-            "value1": {
+            "value": {
               "type": "integer",
-              "title": "value1",
-              "readOnly": true
-            },
-            "value2": {
-              "type": "integer",
-              "title": "value2",
-              "readOnly": true
+              "title": "",
+              "default": 0,
+              "maximum": 255,
+              "minimum": 0
             }
           }
         },
-        "Clock_High": {
+        "slow_shaper_multiply": {
           "type": "object",
           "properties": {
-            "value3": {
+            "value": {
               "type": "integer",
-              "title": "value3",
-              "readOnly": true
-            },
-            "value4": {
+              "title": "",
+              "default": 0,
+              "maximum": 4095,
+              "minimum": 0
+            }
+          }
+        },
+        "fast_shaper_rise_time": {
+          "type": "object",
+          "properties": {
+            "value": {
               "type": "integer",
-              "title": "value4",
-              "readOnly": true
+              "title": "",
+              "default": 0,
+              "maximum": 511,
+              "minimum": 0
+            }
+          }
+        },
+        "fast_shaper_multiply": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 4095,
+              "minimum": 0
+            }
+          }
+        },
+        "moving_average_filter_index": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 255,
+              "minimum": 0
+            }
+          }
+        },
+        "energy_noise_threshold": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 65535,
+              "minimum": 0
+            }
+          }
+        },
+        "timing_noise_threshold": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 65535,
+              "minimum": 0
+            }
+          }
+        },
+        "select_time_to_use": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "boolean",
+              "title": "",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            }
+          }
+        },
+        "trigger_mux": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 3,
+              "minimum": 0
+            }
+          }
+        },
+        "trigger_subtract": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 255,
+              "minimum": 0
+            }
+          }
+        },
+        "energy_pickoff": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 2047,
+              "minimum": 0
+            }
+          }
+        },
+        "pileup_enable": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "boolean",
+              "title": "",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            }
+          }
+        },
+        "pile_up_window": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 255,
+              "minimum": 0
+            }
+          }
+        },
+        "output_event_scaler": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "input_event_scaler": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "input_scaler_lockout": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 65535,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_viewer_control": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 7,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_pretrigger_delay": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "maximum": 255,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_read_length": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_read_address": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 2047,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_ready": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "boolean",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 1,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_read_in_progress": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "boolean",
+              "title": "",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_energy": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_time": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_flags": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "list_number_of_entries": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 15,
+              "minimum": 0
+            }
+          }
+        },
+        "list_read_address": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 15,
+              "minimum": 0
+            }
+          }
+        },
+        "list_not_empty": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "boolean",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 1,
+              "minimum": 0
+            }
+          }
+        },
+        "list_read_in_progress": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "boolean",
+              "title": "",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            }
+          }
+        },
+        "trace_buffer": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "list_energy_buffer": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "list_time": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
+            }
+          }
+        },
+        "list_flags": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "integer",
+              "title": "",
+              "default": 0,
+              "readOnly": true,
+              "maximum": 4294967295,
+              "minimum": 0
             }
           }
         }

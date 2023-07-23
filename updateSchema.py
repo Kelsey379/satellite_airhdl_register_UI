@@ -1,4 +1,14 @@
+#code with partial grouping
+# !!need to make sure toggles activate for ungrouped registers
 import json
+
+def validate_field_value(register_name, field_name, value, bit_width):
+    max_value = (1 << bit_width) - 1
+    if value < 0 or value > max_value:
+        error_message = f"Error: Value '{value}' for '{register_name}.{field_name}' is out of bounds. Valid range is 0 to {max_value}."
+        print(error_message)
+        return error_message
+    return None
 
 def generate_ui_schema(data):
     registers = data['registerMap']['registers']
@@ -9,19 +19,27 @@ def generate_ui_schema(data):
     }
 
     for register in registers:
+        register_name = register['name']
+        register_description = register['description']
+
         group = {
             "type": "Group",
-            "label": f"{register['name']} - {register['description']}",
+            "label": f"{register_name} - {register_description}",
             "elements": []
         }
 
         for field in register['fields']:
+            field_name = field['name']
+            field_description = field['description']
+            field_bit_width = field['bitWidth']
+
             element = {
                 "type": "Control",
-                "scope": f"#/properties/registerMap/properties/{register['name']}/properties/{field['name']}"
+                "label": f"{field_name} - {field_description}",
+                "scope": f"#/properties/registerMap/properties/{register_name}/properties/{field_name}"
             }
 
-            if field['bitWidth'] == 1:
+            if field_bit_width == 1:
                 element['options'] = {
                     "type": "boolean",
                     "toggle": True
@@ -35,6 +53,7 @@ def generate_ui_schema(data):
                 }
 
             group['elements'].append(element)
+
         ui_schema['elements'].append(group)
 
     return ui_schema
@@ -52,17 +71,24 @@ def generate_data_schema(data):
     for register in registers:
         register_properties = {}
         for field in register['fields']:
+            field_name = field['name']
             field_type = "integer" if field['bitWidth'] > 1 else "boolean"
 
             field_properties = {
                 "type": field_type,
-                "title": field['name']
+                "title": field['description'],
+                "default": 0
             }
 
             if field.get('readOnly', False):
                 field_properties['readOnly'] = True
 
-            register_properties[field['name']] = field_properties
+            # Add validation logic here
+            max_value = (1 << field['bitWidth']) - 1
+            field_properties['maximum'] = max_value
+            field_properties['minimum'] = 0
+
+            register_properties[field_name] = field_properties
 
         properties['registerMap']['properties'][register['name']] = {
             "type": "object",
