@@ -3,111 +3,48 @@
   "elements": [
     {
       "type": "Group",
-      "label": "downsample_factor_index - A power of 2 index for the front-end decimator",
+      "label": "LEDs: Turn the LEDs on/off",
       "elements": [
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/downsample_factor_index/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "slow_shaper_rise_time - Rise time for the trapezoidal filter",
-      "elements": [
+          "label": "LED1",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED1",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/slow_shaper_rise_time/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "slow_shaper_flat_top - Flat top for the trapezoidal filter",
-      "elements": [
+          "label": "LED2",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED2",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/slow_shaper_flat_top/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "slow_shaper_multiply - A conversion gain on the trapezoidal filter, allows you to use more of the dynamic range for short filter lengths",
-      "elements": [
+          "label": "LED3",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED3",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/slow_shaper_multiply/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "fast_shaper_rise_time - Rise time for the triangular filter",
-      "elements": [
+          "label": "LED4",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/LED4",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/fast_shaper_rise_time/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "fast_shaper_multiply - A conversion gain on the trapezoidal filter, allows you to use more of the dynamic range for short filter lengths",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/fast_shaper_multiply/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "moving_average_filter_index - A power of 2 index for the moving average filter",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/moving_average_filter_index/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "energy_noise_threshold - The ADC value to consider a trace a real event. This is used to determine the energy",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/energy_noise_threshold/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "timing_noise_threshold - The ADC value to latch the clock for timing purposes. This can be lower than the energy threshold for more accurate timing. Uses the triangular filtered trace",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/timing_noise_threshold/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "select_time_to_use - Allows the user to select the slow shaper time instead of the fast shaper time if required.\n0 = fast time\n1 = slow time",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/select_time_to_use/properties/value",
+          "label": "Sample_LED",
+          "scope": "#/properties/registerMap/properties/LEDs/properties/Sample_LED",
           "options": {
             "type": "boolean",
             "toggle": true
@@ -117,45 +54,39 @@
     },
     {
       "type": "Group",
-      "label": "trigger_mux - Allows the user to select a trace for triggering (i.e. the energy channel).\n00 = raw ADC data\n01 = trapezoidal filter\n10 = triangular filter\n11 = moving average filter",
+      "label": "VEn: Enable the voltages",
       "elements": [
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trigger_mux/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trigger_subtract - The time difference between the trigger and when the baseline should be sampled for determining the energy. Positive numbers only",
-      "elements": [
+          "label": "ADC_1V8A: 1V8 Analog Regulator - To Onboard ADC",
+          "scope": "#/properties/registerMap/properties/VEn/properties/ADC_1V8A",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trigger_subtract/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "energy_pickoff - The number of samples to wait until choosing the energy value. Should be slightly longer than the rise time",
-      "elements": [
+          "label": "FEM_5VA: 5V Analog Regulator - To Front End Module (FEM)",
+          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_5VA",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/energy_pickoff/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "pileup_enable - An enable register for the pile-up module",
-      "elements": [
+          "label": "FEM_N5VA: 5V Negative Analog Regulator - To Front End Module (FEM)",
+          "scope": "#/properties/registerMap/properties/VEn/properties/FEM_N5VA",
+          "options": {
+            "type": "boolean",
+            "toggle": true
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/pileup_enable/properties/value",
+          "label": "HV_5VA2: 5V Analog Regulator - To High Voltage Supply",
+          "scope": "#/properties/registerMap/properties/VEn/properties/HV_5VA2",
           "options": {
             "type": "boolean",
             "toggle": true
@@ -165,23 +96,23 @@
     },
     {
       "type": "Group",
-      "label": "pile_up_window - The number of samples to look for pile-up after a trigger",
+      "label": "Clock_Low: Lower 32 bits of a 64-bit 20 ns clock",
       "elements": [
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/pile_up_window/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "output_event_scaler - A scaler counting the number of events processed. Used for dead-time calculations",
-      "elements": [
+          "label": "value1: Lower 32 bits of a 64-bit 20 ns clock",
+          "scope": "#/properties/registerMap/properties/Clock_Low/properties/value1",
+          "options": {
+            "rule": {
+              "readOnly": true,
+              "effect": "disabled"
+            }
+          }
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/output_event_scaler/properties/value",
+          "label": "value2: Lower 32 bits of a 64-bit 20 ns clock",
+          "scope": "#/properties/registerMap/properties/Clock_Low/properties/value2",
           "options": {
             "rule": {
               "readOnly": true,
@@ -193,300 +124,23 @@
     },
     {
       "type": "Group",
-      "label": "input_event_scaler - A scaler counting the number of triggers that have been recorded. Used for dead-time calculations",
+      "label": "Clock_High: Upper 32 bits of a 64-bit 20 ns clock",
       "elements": [
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/input_event_scaler/properties/value",
+          "label": "value3: Upper 32 bits of a 64-bit 20 ns clock",
+          "scope": "#/properties/registerMap/properties/Clock_High/properties/value3",
           "options": {
             "rule": {
               "readOnly": true,
               "effect": "disabled"
             }
           }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "input_scaler_lockout - An intentional fixed deadtime applied to the input scaler, allowing for a pure non-paralyzable model to be used. In order for this to be valid, this time must be longer than the full trapezoidal filter length",
-      "elements": [
+        },
         {
           "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/input_scaler_lockout/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_viewer_control - A mux to determine which trace is actually stored.\n000 = raw ADC data\n001 = downsampled data\n010 = triangle filter\n011 = trapezoidal filter\n100 = moving average filter\nall others give raw ADC data",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_viewer_control/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_pretrigger_delay - The amount of samples before and after the trace \"trigger\" to keep for display purposes only",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_pretrigger_delay/properties/value"
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_read_length - This is the length of the trace to be read in the buffer",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_read_length/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_read_address - The address offset to start reading from the buffer",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_read_address/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_ready - Register being high means that a trace is ready for processing. This will stay high until the trace has been fully read and microblaze has de-asserted its flag",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_ready/properties/value",
-          "options": {
-            "type": "boolean",
-            "toggle": true,
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_read_in_progress - The microblaze flag that the trace is being read, must be lowered to complete the read process",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_read_in_progress/properties/value",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_energy - The energy of the trace stored in the buffer",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_energy/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_time - The time of the trace stored in the buffer",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_time/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_flags - The flags for the trace stored in the buffer",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_flags/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_number_of_entries - The number of values in the list to be read",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_number_of_entries/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_read_address - The address to start reading the list memory from",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_read_address/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_not_empty - A bit to tell the microblaze to read this list",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_not_empty/properties/value",
-          "options": {
-            "type": "boolean",
-            "toggle": true,
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_read_in_progress - A signal to let the hdl know the microblaze is reading the list.\nV1 limitations\nYou MUST read the number of entries and read address BEFORE raising this flag. Any entries you don't read will be lost, so try to read the whole list",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_read_in_progress/properties/value",
-          "options": {
-            "type": "boolean",
-            "toggle": true
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "trace_buffer - The actual trace buffer",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/trace_buffer/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_energy_buffer - List buffer containing the energies",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_energy_buffer/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_time - The list times",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_time/properties/value",
-          "options": {
-            "rule": {
-              "readOnly": true,
-              "effect": "disabled"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "Group",
-      "label": "list_flags - The list flags",
-      "elements": [
-        {
-          "type": "Control",
-          "label": "value - ",
-          "scope": "#/properties/registerMap/properties/list_flags/properties/value",
+          "label": "value4: Upper 32 bits of a 64-bit 20 ns clock",
+          "scope": "#/properties/registerMap/properties/Clock_High/properties/value4",
           "options": {
             "rule": {
               "readOnly": true,

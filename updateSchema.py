@@ -1,5 +1,3 @@
-#code with partial grouping
-# !!need to make sure toggles activate for ungrouped registers
 import json
 
 def validate_field_value(register_name, field_name, value, bit_width):
@@ -24,7 +22,7 @@ def generate_ui_schema(data):
 
         group = {
             "type": "Group",
-            "label": f"{register_name} - {register_description}",
+            "label": f"{register_name}: {register_description}" if register_description else register_name,
             "elements": []
         }
 
@@ -35,7 +33,7 @@ def generate_ui_schema(data):
 
             element = {
                 "type": "Control",
-                "label": f"{field_name} - {field_description}",
+                "label": f"{field_name}: {field_description}" if field_description else field_name,
                 "scope": f"#/properties/registerMap/properties/{register_name}/properties/{field_name}"
             }
 

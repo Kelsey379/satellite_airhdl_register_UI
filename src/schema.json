@@ -4,118 +4,38 @@
     "registerMap": {
       "type": "object",
       "properties": {
-        "downsample_factor_index": {
+        "LEDs": {
           "type": "object",
           "properties": {
-            "value": {
-              "type": "integer",
+            "LED1": {
+              "type": "boolean",
               "title": "",
               "default": 0,
-              "maximum": 31,
+              "maximum": 1,
               "minimum": 0
-            }
-          }
-        },
-        "slow_shaper_rise_time": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
+            },
+            "LED2": {
+              "type": "boolean",
               "title": "",
               "default": 0,
-              "maximum": 511,
+              "maximum": 1,
               "minimum": 0
-            }
-          }
-        },
-        "slow_shaper_flat_top": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
+            },
+            "LED3": {
+              "type": "boolean",
               "title": "",
               "default": 0,
-              "maximum": 255,
+              "maximum": 1,
               "minimum": 0
-            }
-          }
-        },
-        "slow_shaper_multiply": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
+            },
+            "LED4": {
+              "type": "boolean",
               "title": "",
               "default": 0,
-              "maximum": 4095,
+              "maximum": 1,
               "minimum": 0
-            }
-          }
-        },
-        "fast_shaper_rise_time": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 511,
-              "minimum": 0
-            }
-          }
-        },
-        "fast_shaper_multiply": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 4095,
-              "minimum": 0
-            }
-          }
-        },
-        "moving_average_filter_index": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 255,
-              "minimum": 0
-            }
-          }
-        },
-        "energy_noise_threshold": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 65535,
-              "minimum": 0
-            }
-          }
-        },
-        "timing_noise_threshold": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 65535,
-              "minimum": 0
-            }
-          }
-        },
-        "select_time_to_use": {
-          "type": "object",
-          "properties": {
-            "value": {
+            },
+            "Sample_LED": {
               "type": "boolean",
               "title": "",
               "default": 0,
@@ -124,72 +44,53 @@
             }
           }
         },
-        "trigger_mux": {
+        "VEn": {
           "type": "object",
           "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 3,
-              "minimum": 0
-            }
-          }
-        },
-        "trigger_subtract": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 255,
-              "minimum": 0
-            }
-          }
-        },
-        "energy_pickoff": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 2047,
-              "minimum": 0
-            }
-          }
-        },
-        "pileup_enable": {
-          "type": "object",
-          "properties": {
-            "value": {
+            "ADC_1V8A": {
               "type": "boolean",
-              "title": "",
+              "title": "1V8 Analog Regulator - To Onboard ADC",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            },
+            "FEM_5VA": {
+              "type": "boolean",
+              "title": "5V Analog Regulator - To Front End Module (FEM)",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            },
+            "FEM_N5VA": {
+              "type": "boolean",
+              "title": "5V Negative Analog Regulator - To Front End Module (FEM)",
+              "default": 0,
+              "maximum": 1,
+              "minimum": 0
+            },
+            "HV_5VA2": {
+              "type": "boolean",
+              "title": "5V Analog Regulator - To High Voltage Supply",
               "default": 0,
               "maximum": 1,
               "minimum": 0
             }
           }
         },
-        "pile_up_window": {
+        "Clock_Low": {
           "type": "object",
           "properties": {
-            "value": {
+            "value1": {
               "type": "integer",
-              "title": "",
+              "title": "Lower 32 bits of a 64-bit 20 ns clock",
               "default": 0,
-              "maximum": 255,
+              "readOnly": true,
+              "maximum": 4294967295,
               "minimum": 0
-            }
-          }
-        },
-        "output_event_scaler": {
-          "type": "object",
-          "properties": {
-            "value": {
+            },
+            "value2": {
               "type": "integer",
-              "title": "",
+              "title": "Lower 32 bits of a 64-bit 20 ns clock",
               "default": 0,
               "readOnly": true,
               "maximum": 4294967295,
@@ -197,241 +98,20 @@
             }
           }
         },
-        "input_event_scaler": {
+        "Clock_High": {
           "type": "object",
           "properties": {
-            "value": {
+            "value3": {
               "type": "integer",
-              "title": "",
+              "title": "Upper 32 bits of a 64-bit 20 ns clock",
               "default": 0,
               "readOnly": true,
               "maximum": 4294967295,
               "minimum": 0
-            }
-          }
-        },
-        "input_scaler_lockout": {
-          "type": "object",
-          "properties": {
-            "value": {
+            },
+            "value4": {
               "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 65535,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_viewer_control": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 7,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_pretrigger_delay": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "maximum": 255,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_read_length": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_read_address": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 2047,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_ready": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "boolean",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 1,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_read_in_progress": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "boolean",
-              "title": "",
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_energy": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_time": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_flags": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "list_number_of_entries": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 15,
-              "minimum": 0
-            }
-          }
-        },
-        "list_read_address": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 15,
-              "minimum": 0
-            }
-          }
-        },
-        "list_not_empty": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "boolean",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 1,
-              "minimum": 0
-            }
-          }
-        },
-        "list_read_in_progress": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "boolean",
-              "title": "",
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0
-            }
-          }
-        },
-        "trace_buffer": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "list_energy_buffer": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "list_time": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
-              "default": 0,
-              "readOnly": true,
-              "maximum": 4294967295,
-              "minimum": 0
-            }
-          }
-        },
-        "list_flags": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "integer",
-              "title": "",
+              "title": "Upper 32 bits of a 64-bit 20 ns clock",
               "default": 0,
               "readOnly": true,
               "maximum": 4294967295,
